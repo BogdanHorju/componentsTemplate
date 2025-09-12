@@ -76,12 +76,6 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --accent-hue: 200 100% 50%;
-  --blur-md: 12px;
-  --radius-lg: 16px;
-  --surface-primary: rgba(255, 255, 255, 0.16);
-  --surface-secondary: rgba(255, 255, 255, 0.24);
-  --bg-gradient-light: linear-gradient(135deg, #f5f7fa 0%, #e1e3e5 100%);
 }
 
 .dark {
@@ -116,9 +110,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-  --surface-primary: rgba(255, 255, 255, 0.08);
-  --surface-secondary: rgba(255, 255, 255, 0.12);
-  --bg-gradient-dark: radial-gradient(circle at top left, rgba(30, 41, 59, 0.7), #0f172a);
 }
 
 .button-spacing {
@@ -134,29 +125,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-body {
-  background: var(--bg-gradient-light);
-  transition: background 0.3s ease;
-}
-
-.dark body {
-  background: var(--bg-gradient-dark);
-}
-
-.glass-surface {
-  background-color: var(--surface-primary);
-  backdrop-filter: blur(var(--blur-md)) saturate(1.2);
-  -webkit-backdrop-filter: blur(var(--blur-md)) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dark .glass-surface {
-  background-color: var(--surface-secondary);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
