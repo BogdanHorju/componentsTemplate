@@ -1,8 +1,15 @@
 // components/ui/button-link.tsx
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function ButtonLink({ href, variant, children }: any) {
+import type { VariantProps } from "class-variance-authority";
+
+type ButtonLinkProps = {
+  href: string;
+  variant?: VariantProps<typeof buttonVariants>["variant"];
+  children: React.ReactNode;
+};
+
+export function ButtonLink({ href, variant, children }: ButtonLinkProps) {
   return (
     <Link href={href} className={buttonVariants({ variant })}>
       {children}
