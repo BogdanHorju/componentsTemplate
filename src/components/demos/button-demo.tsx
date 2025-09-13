@@ -1,9 +1,12 @@
 // components/demos/button-demo.tsx
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import translations from "@/locales/it.json";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Item = { key: keyof typeof translations; variant?: any };
+import { type VariantProps } from "class-variance-authority";
+
+type Variant = VariantProps<typeof buttonVariants>["variant"];
+
+type Item = { key: keyof typeof translations; variant?: Variant };
 
 export function ButtonDemo({
   items,
